@@ -46,7 +46,7 @@
                   </div>
 
                   <div class="text-center pt-1 mb-5 pb-1">
-                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Iniciar sesión</button>
+                    <button class="btn btn-blue btn-block fa-lg gradient-custom-2 mb-3" type="submit">Iniciar sesión</button>
                     <a class="text-muted" href="#!">¿Olvidaste tu contraseña?</a>
                   </div>
 
@@ -54,9 +54,7 @@
                     <p class="mb-0 me-2">¿No tienes una cuenta?</p>
                     <a href="{{route('register')}}" class="btn btn-outline-danger">Crear una cuenta</a>
                   </div>
-
                 </form>
-
               </div>
             </div>
           </div>
