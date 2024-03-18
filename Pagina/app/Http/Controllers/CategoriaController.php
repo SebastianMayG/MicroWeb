@@ -64,8 +64,7 @@ class CategoriaController extends Controller
     public function destroy($id)
     {
         $categoria = Categoria::findOrFail($id);
-        $categoria->visibilidad = '0';
-        $categoria->update();
+        $categoria->delete();
         return Redirect::to('almacen/categoria');
     }
 }

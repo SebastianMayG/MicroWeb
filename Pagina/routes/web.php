@@ -26,6 +26,9 @@ Route::get('/almacen/categoria/create', [CategoriaController::class, 'create']);
 Route::post('/almacen/categoria', [CategoriaController::class, 'store']);
 Route::get('/almacen/categoria/{id}/edit', [CategoriaController::class, 'edit'])->name('categoria.edit');
 Route::patch('/almacen/categoria/{idcategoria}', [CategoriaController::class, 'update'])->name('almacen.categoria.update');
+Route::delete('/almacen/categoria/{id}', [CategoriaController::class, 'destroy'])->name('almacen.categoria.destroy');
+
+
 
 
 Route::get('/almacen/articulo', function () {

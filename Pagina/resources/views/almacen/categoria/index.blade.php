@@ -24,8 +24,7 @@
 					<td>{{ $cat->descripcion}}</td>
 					<td>
 						<a href="{{ route('categoria.edit', $cat->idcategoria) }}"><button class="btn btn-info">Editar</button></a>
-
-                         <a href="" data-target="#modal-delete-{{$cat->idcategoria}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
+                        <a href="" data-target="#modal-delete-{{$cat->idcategoria}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
 					</td>
 				</tr>
 				@include('almacen.categoria.modal')

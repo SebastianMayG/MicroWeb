@@ -1,5 +1,6 @@
 <div class="modal fade modal-slide-in-right" aria-hidden="true"
 role="dialog" tabindex="-1" id="modal-delete-{{$cat->idcategoria}}">
+	{{ Form::open(['route' => ['almacen.categoria.destroy', $cat->idcategoria], 'method' => 'DELETE']) }}
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
