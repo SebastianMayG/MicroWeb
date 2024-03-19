@@ -23,7 +23,7 @@ class ClienteController extends Controller
             $personas=DB::table('persona')
             ->where('nombre','LIKE','%'.$query.'%')
             ->where ('tipo_persona','=','Cliente')
-            ->orwhere('num_documento','LIKE','%'.$query.'%')
+            ->orwhere('num_comprobante','LIKE','%'.$query.'%')
             ->where ('tipo_persona','=','Cliente')
             ->orderBy('idpersona','desc')
             ->paginate(7);

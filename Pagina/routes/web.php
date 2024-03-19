@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ArticuloController;
+use App\Http\Controllers\ClienteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,3 +36,10 @@ Route::post('/almacen/articulo', [ArticuloController::class, 'store']);
 Route::get('/almacen/articulo/{id}/edit', [ArticuloController::class, 'edit'])->name('articulo.edit');
 Route::patch('/almacen/articulo/{idarticulo}', [ArticuloController::class, 'update'])->name('almacen.articulo.update');
 Route::delete('/almacen/articulo/{id}', [ArticuloController::class, 'destroy'])->name('almacen.articulo.destroy');
+
+Route::get('/ventas/cliente', [ClienteController::class, 'index']);
+Route::get('/ventas/cliente/create', [ClienteController::class, 'create']);
+Route::post('/ventas/cliente', [ClienteController::class, 'store']);
+Route::get('/ventas/cliente/{id}/edit', [ClienteController::class, 'edit'])->name('cliente.edit');
+Route::patch('/ventas/cliente/{idpersona}', [ClienteController::class, 'update'])->name('ventas.cliente.update');
+Route::delete('/ventas/cliente/{id}', [ClienteController::class, 'destroy'])->name('ventas.cliente.destroy');
