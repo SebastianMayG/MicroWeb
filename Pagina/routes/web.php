@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ArticuloController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,9 +29,9 @@ Route::get('/almacen/categoria/{id}/edit', [CategoriaController::class, 'edit'])
 Route::patch('/almacen/categoria/{idcategoria}', [CategoriaController::class, 'update'])->name('almacen.categoria.update');
 Route::delete('/almacen/categoria/{id}', [CategoriaController::class, 'destroy'])->name('almacen.categoria.destroy');
 
-
-
-
-Route::get('/almacen/articulo', function () {
-    return 'hello world';
-});
+Route::get('/almacen/articulo', [ArticuloController::class, 'index']);
+Route::get('/almacen/articulo/create', [ArticuloController::class, 'create']);
+Route::post('/almacen/articulo', [ArticuloController::class, 'store']);
+Route::get('/almacen/articulo/{id}/edit', [ArticuloController::class, 'edit'])->name('articulo.edit');
+Route::patch('/almacen/articulo/{idarticulo}', [ArticuloController::class, 'update'])->name('almacen.articulo.update');
+Route::delete('/almacen/articulo/{id}', [ArticuloController::class, 'destroy'])->name('almacen.articulo.destroy');
