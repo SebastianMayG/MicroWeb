@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ArticuloController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ProveedorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +22,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-#Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+#Route::get('/home', [App\Http\Controller\HomeController::class, 'index'])->name('home');
 
 Route::get('/almacen/categoria', [CategoriaController::class, 'index']);
 Route::get('/almacen/categoria/create', [CategoriaController::class, 'create']);
@@ -43,3 +44,10 @@ Route::post('/ventas/cliente', [ClienteController::class, 'store']);
 Route::get('/ventas/cliente/{id}/edit', [ClienteController::class, 'edit'])->name('cliente.edit');
 Route::patch('/ventas/cliente/{idpersona}', [ClienteController::class, 'update'])->name('ventas.cliente.update');
 Route::delete('/ventas/cliente/{id}', [ClienteController::class, 'destroy'])->name('ventas.cliente.destroy');
+
+Route::get('/compras/proveedor', [ProveedorController::class, 'index']);
+Route::get('/compras/proveedor/create', [ProveedorController::class, 'create']);
+Route::post('/compras/proveedor', [ProveedorController::class, 'store']);
+Route::get('/compras/proveedor/{id}/edit', [ProveedorController::class, 'edit'])->name('proveedor.edit');
+Route::patch('/compras/proveedor/{idpersona}', [ProveedorController::class, 'update'])->name('compras.proveedor.update');
+Route::delete('/compras/proveedor/{id}', [ProveedorController::class, 'destroy'])->name('compras.proveedor.destroy');
