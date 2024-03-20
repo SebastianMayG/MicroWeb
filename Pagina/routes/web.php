@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ArticuloController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProveedorController;
+use App\Http\Controllers\IngresoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -64,3 +65,10 @@ Route::post('/compras/proveedor', [ProveedorController::class, 'store']);
 Route::get('/compras/proveedor/{id}/edit', [ProveedorController::class, 'edit'])->name('proveedor.edit');
 Route::patch('/compras/proveedor/{idpersona}', [ProveedorController::class, 'update'])->name('compras.proveedor.update');
 Route::delete('/compras/proveedor/{id}', [ProveedorController::class, 'destroy'])->name('compras.proveedor.destroy');
+
+Route::get('/compras/ingreso', [IngresoController::class, 'index']);
+Route::get('/compras/ingreso/create', [IngresoController::class, 'create']);
+Route::post('/compras/ingreso', [IngresoController::class, 'store']);
+Route::get('/compras/ingreso/{id}/edit', [IngresoController::class, 'edit'])->name('ingreso.edit');
+Route::patch('/compras/ingreso/{idpersona}', [IngresoController::class, 'update'])->name('compras.ingreso.update');
+Route::delete('/compras/ingreso/{id}', [IngresoController::class, 'destroy'])->name('compras.ingreso.destroy');
