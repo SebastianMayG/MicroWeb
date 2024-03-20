@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Persona;
+use App\Models\Persona;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\PersonaFormRequest;
 use DB;
