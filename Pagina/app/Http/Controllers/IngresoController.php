@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use app\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
-use sisVentas\Http\Requests\IngresoFormRequest;
-use sisVentas\Ingreso;
-use sisVentas\DetalleIngreso;
+use App\Http\Requests\IngresoFormRequest;
+use App\Ingreso;
+use App\DetalleIngreso;
 use DB;
 
 use Carbon\Carbon;
