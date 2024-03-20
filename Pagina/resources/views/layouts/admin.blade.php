@@ -91,13 +91,24 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="/perfil/miperfil"><i class="fa fa-circle-o"></i> Mi perfil</a></li>
-                <li><a href="/perfil/misempresas"><i class="fa fa-circle-o"></i> Mi(s) empresas(s)</a></li>
+                <li><a href="/perfil/misempresas"><i class="fa fa-circle-o"></i> Mi(s) empresa(s)</a></li>
               </ul>
             </li>
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-file-text-o"></i>
                 <span>Plan de negocios</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <!--<li><a href="/compras/ingreso"><i class="fa fa-circle-o"></i> Ingresos</a></li>
+                <li><a href="/compras/proveedor"><i class="fa fa-circle-o"></i> Proveedores</a></li>-->
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-file-text-o"></i>
+                <span>Compras</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
@@ -123,8 +134,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="ventas/venta"><i class="fa fa-circle-o"></i> Ventas</a></li>
-                <li><a href="ventas/cliente"><i class="fa fa-circle-o"></i> Clientes</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Calcular costo</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -133,8 +143,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href=""><i class="fa fa-circle-o"></i> Control de Ventas</a></li>
-                <li><a href=""><i class="fa fa-circle-o"></i> Graficas</a></li>
+              <li><a href="ventas/venta"><i class="fa fa-circle-o"></i> Ventas</a></li>
+                <li><a href="ventas/cliente"><i class="fa fa-circle-o"></i> Clientes</a></li>
               </ul>
             </li>
 
