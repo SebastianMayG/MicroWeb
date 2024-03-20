@@ -22,6 +22,19 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/principal', function () {
+    return view('layouts.admin'); 
+});
+
+Route::get('/perfil/miperfil', function () {
+    return view('layouts.layouts_views.admin_myprofile'); 
+});
+
+Route::get('/perfil/misempresas', function () {
+    return view('layouts.layouts_views.admin_myenterprise'); 
+});
+
+
 #Route::get('/home', [App\Http\Controller\HomeController::class, 'index'])->name('home');
 
 Route::get('/almacen/categoria', [CategoriaController::class, 'index']);

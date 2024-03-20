@@ -85,7 +85,7 @@
           <ul class="sidebar-menu">
             <li class="header"></li>
             <li class="treeview">
-              <a href="/perfil">
+              <a href="#">
                 <i class="fa fa-user"></i> <span>Mi perfil</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -241,7 +241,9 @@
                       <div class="row">
                         <div class="col-md-12">
                                 <!--Contenido-->
-                                  @yield('contenido')
+                                <h1>Mi perfil</h1>
+                                 <img src="https://th.bing.com/th/id/OIP.YAAWSJay-wbX82DlaHN16wHaJ4?rs=1&pid=ImgDetMain" with="50">
+                                 <p> Claramente ese soy yo</p>
                                 <!--Fin Contenido-->
                             </div>
                           </div>

@@ -85,7 +85,7 @@
           <ul class="sidebar-menu">
             <li class="header"></li>
             <li class="treeview">
-              <a href="/perfil">
+              <a href="#">
                 <i class="fa fa-user"></i> <span>Mi perfil</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -241,7 +241,7 @@
                       <div class="row">
                         <div class="col-md-12">
                                 <!--Contenido-->
-                                  @yield('contenido')
+                                <h1>Mis empresas</h1>
                                 <!--Fin Contenido-->
                             </div>
                           </div>
