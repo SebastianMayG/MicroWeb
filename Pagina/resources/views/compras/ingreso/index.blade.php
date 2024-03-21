@@ -20,7 +20,7 @@
 					<th>Estado</th>
 					<th>Opciones</th>
 				</thead>
-               @foreach ($ingresos as $ing)
+    				@foreach ($ingresos as $ing)
 				<tr>
 					<td>{{ $ing->fecha_hora}}</td>
 					<td>{{ $ing->nombre}}</td>

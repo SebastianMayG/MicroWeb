@@ -8,8 +8,8 @@ use app\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests\IngresoFormRequest;
-use App\Ingreso;
-use App\DetalleIngreso;
+use App\Models\Ingreso;
+use App\MOdels\DetalleIngreso;
 use DB;
 
 use Carbon\Carbon;

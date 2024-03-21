@@ -5,21 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Ingreso extends Model
+class Venta extends Model
 {
-    protected $table='ingreso';
+    protected $table='venta';
 
-    protected $primaryKey='idingreso';
+    protected $primaryKey='idventa';
 
     public $timestamps=false;
 
     protected $fillable =[
-    'idproveedor',
+    'idcliente',
     'tipo_comprobante',
     'serie_comprobante',
     'num_comprobante',
     'fecha_hora',
     'impuesto',
+    'total_venta',
     'estado'
     ];
     protected $guarded =[
