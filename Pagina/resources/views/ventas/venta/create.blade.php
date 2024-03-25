@@ -84,7 +84,7 @@
 				<div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
 					<div class="form-group">
 						<label for="descuento">Descuento</label>
-						<input type="number" name="pdescuento" id="pdescuento" class="form-control" placeholder="P. Descuento">
+						<input type="number" name="pdescuento" id="pdescuento" class="form-control" placeholder="P. Descuento" value ="0">
 					</div>
 				</div>
 				<div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
@@ -150,17 +150,22 @@
 	}
 	
 	function agregar() {
-    idarticulo = $("#pidarticulo").val();
+
+	datosArticulo = document.getElementById('pidarticulo').value.split('_');
+
+	idarticulo = datosArticulo[0];
+	//idarticulo = $("#pidarticulo").val();
     articulo = $("#pidarticulo option:selected").text();
     cantidad = parseFloat($("#pcantidad").val());
     precio_venta = parseFloat($("#pprecio_venta").val());
     descuento = parseFloat($("#pdescuento").val()); // Obtener el descuento
+	stock=$("#pstock").val();
 
-    if (idarticulo != "" && cantidad > 0 && precio_venta != "") {
+    if (idarticulo != "" && cantidad > 0 && precio_venta != "" && descuento >= 0) {
         subtotal[cont] = cantidad * precio_venta;
 
         // Aplicar descuento si existe
-        if (!isNaN(descuento) && descuento > 0) {
+        if (!isNaN(descuento) && descuento >= 0) {
             subtotal[cont] -= descuento;
         }
 
