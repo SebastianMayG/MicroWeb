@@ -2,7 +2,7 @@
 @section ('contenido')
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			<h3>Nuevo Venta</h3>
+			<h3>Nueva Venta</h3>
 			@if (count($errors)>0)
 			<div class="alert alert-danger">
 				<ul>
@@ -83,8 +83,8 @@
 				</div>
 				<div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
 					<div class="form-group">
-						<label for="precio_compra">Descuento</label>
-						<input type="number" name="pdescuento" id="pdescuento" class="form-control" placeholder="P. Compra">
+						<label for="descuento">Descuento</label>
+						<input type="number" name="pdescuento" id="pdescuento" class="form-control" placeholder="P. Descuento">
 					</div>
 				</div>
 				<div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
@@ -111,7 +111,6 @@
 							<th><h4 id="total">MXN 0.00</h4> <input type="hidden" name="total_venta" id="total_venta"></th>
 						</tfoot>
 						<tbody>
-
 						</tbody>
 					</table>
 				</div>
@@ -142,9 +141,10 @@
 	$('#guardar').hide();
 	$("#pidarticulo").change(mostrarValores);
 
-	function mostrarValores() {
+	function mostrarValores() 
+	{
 		datosArticulo = document.getElementById('pidarticulo').value.split('_');
-		$("#pprecio_venta").val(darosArticulos[2]);
+		$("#pprecio_venta").val(datosArticulos[2]);
 		$("#pstock").val(datosArticulos[1]);
 	}
 	
