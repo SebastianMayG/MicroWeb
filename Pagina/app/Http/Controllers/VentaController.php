@@ -52,7 +52,7 @@ class VentaController extends Controller
         return view("ventas.venta.create",["personas"=>$personas,"articulos"=>$articulos]);
     }
 
-     public function store (VentaFormRequest $request)
+    public function store (VentaFormRequest $request)
     {
      try{
          DB::beginTransaction();
@@ -76,8 +76,9 @@ class VentaController extends Controller
 
          $cont = 0;
 
-         while($cont < count($idarticulo)){
-            $detalle = new DetalleVENTA();
+        while($cont < count($idarticulo))
+        {
+            $detalle = new DetalleVenta();
             $detalle->idventa= $venta->idventa; 
             $detalle->idarticulo= $idarticulo[$cont];
             $detalle->cantidad= $cantidad[$cont];
@@ -85,7 +86,7 @@ class VentaController extends Controller
             $detalle->precio_venta= $precio_venta[$cont];
             $detalle->save();
             $cont=$cont+1;            
-         }
+        }
 
          DB::commit();
 
@@ -99,7 +100,7 @@ class VentaController extends Controller
 
     public function show($id)
     {
-    $venta=DB::table('venta as v')
+        $venta=DB::table('venta as v')
             ->join('persona as p','v.idcliente','=','p.idpersona')
             ->join('detalle_venta as dv','v.idventa','=','dv.idventa')
             ->select('v.idventa','v.fecha_hora','p.nombre','v.tipo_comprobante','v.serie_comprobante','v.num_comprobante','v.impuesto','v.estado','v.total_venta')
@@ -116,7 +117,7 @@ class VentaController extends Controller
 
     public function destroy($id)
     {
-        $venta=Ingreso::findOrFail($id);
+        $venta=Venta::findOrFail($id);
         $venta->Estado='C';
         $venta->update();
         return Redirect::to('ventas/venta');
