@@ -1,8 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use App\Http\Requests;
 
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
@@ -15,10 +16,9 @@ use Carbon\Carbon;
 use Response;
 use Illuminate\Support\Collection;
 
-
 class VentaController extends Controller
 {
-    public function __construct()
+     public function __construct()
     {
 
     }
@@ -41,18 +41,18 @@ class VentaController extends Controller
     }
     public function create()
     {
-    $personas=DB::table('persona')->where('tipo_persona','=','Cliente')->get();
-    $articulos = DB::table('articulo as art')
-            ->join('detalle_ingreso as di', 'art.idarticulo','=', 'di.idarticulo')
+     $personas=DB::table('persona')->where('tipo_persona','=','Cliente')->get();
+     $articulos = DB::table('articulo as art')
+      ->join('detalle_ingreso as di','art.idarticulo','=','di.idarticulo')
             ->select(DB::raw('CONCAT(art.codigo, " ",art.nombre) AS articulo'),'art.idarticulo','art.stock',DB::raw('avg(di.precio_venta) as precio_promedio'))
             ->where('art.estado','=','Activo')
-            ->where('art.stock', '>', '0')
+            ->where('art.stock','>','0')
             ->groupBy('articulo','art.idarticulo','art.stock')
             ->get();
         return view("ventas.venta.create",["personas"=>$personas,"articulos"=>$articulos]);
     }
 
-    public function store (VentaFormRequest $request)
+     public function store (VentaFormRequest $request)
     {
      try{
          DB::beginTransaction();
@@ -62,7 +62,7 @@ class VentaController extends Controller
          $venta->serie_comprobante=$request->get('serie_comprobante');
          $venta->num_comprobante=$request->get('num_comprobante');
          $venta->total_venta=$request->get('total_venta');
-
+         
          $mytime = Carbon::now('America/Mexico_City');
          $venta->fecha_hora=$mytime->toDateTimeString();
          $venta->impuesto='16';
@@ -76,23 +76,22 @@ class VentaController extends Controller
 
          $cont = 0;
 
-        while($cont < count($idarticulo))
-        {
-            $detalle = new DetalleVenta();
-            $detalle->idventa= $venta->idventa; 
-            $detalle->idarticulo= $idarticulo[$cont];
-            $detalle->cantidad= $cantidad[$cont];
-            $detalle->descuento= $descuento[$cont];
-            $detalle->precio_venta= $precio_venta[$cont];
-            $detalle->save();
-            $cont=$cont+1;            
-        }
+         while($cont < count($idarticulo)){
+             $detalle = new DetalleVenta();
+             $detalle->idventa= $venta->idventa; 
+             $detalle->idarticulo= $idarticulo[$cont];
+             $detalle->cantidad= $cantidad[$cont];
+             $detalle->descuento= $descuento[$cont];
+             $detalle->precio_venta= $precio_venta[$cont];
+             $detalle->save();
+             $cont=$cont+1;            
+         }
 
          DB::commit();
 
         }catch(\Exception $e)
         {
-            DB::rollback();
+           DB::rollback();
         }
 
         return Redirect::to('ventas/venta');
@@ -100,7 +99,7 @@ class VentaController extends Controller
 
     public function show($id)
     {
-        $venta=DB::table('venta as v')
+     $venta=DB::table('venta as v')
             ->join('persona as p','v.idcliente','=','p.idpersona')
             ->join('detalle_venta as dv','v.idventa','=','dv.idventa')
             ->select('v.idventa','v.fecha_hora','p.nombre','v.tipo_comprobante','v.serie_comprobante','v.num_comprobante','v.impuesto','v.estado','v.total_venta')
@@ -108,16 +107,16 @@ class VentaController extends Controller
             ->first();
 
         $detalles=DB::table('detalle_venta as d')
-            ->join('articulo as a','d.idarticulo','=','a.idarticulo')
-            ->select('a.nombre as articulo','d.cantidad','d.descuento','d.precio_venta')
-            ->where('d.idventa','=',$id)
-            ->get();
+             ->join('articulo as a','d.idarticulo','=','a.idarticulo')
+             ->select('a.nombre as articulo','d.cantidad','d.descuento','d.precio_venta')
+             ->where('d.idventa','=',$id)
+             ->get();
         return view("ventas.venta.show",["venta"=>$venta,"detalles"=>$detalles]);
     }
 
     public function destroy($id)
     {
-        $venta=Venta::findOrFail($id);
+     $venta=Venta::findOrFail($id);
         $venta->Estado='C';
         $venta->update();
         return Redirect::to('ventas/venta');

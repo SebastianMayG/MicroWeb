@@ -81,8 +81,8 @@ Route::get('/ventas/venta', [VentaController::class, 'index']);
 Route::get('/ventas/venta/create', [VentaController::class, 'create']);
 Route::post('/ventas/venta', [VentaController::class, 'store']);
 Route::get('/ventas/ingreso/{id}/edit', [VentaController::class, 'edit'])->name('ingreso.edit');
-Route::patch('/compras/ingreso/{idpersona}', [VentaController::class, 'update'])->name('compras.ingreso.update');
-Route::delete('/compras/ingreso/{id}', [VentaController::class, 'destroy'])->name('compras.ingreso.destroy');
+Route::patch('/ventas/venta/{id}', [VentaController::class, 'update'])->name('ventas.venta.update');
+Route::delete('/ventas/venta/{id}', [VentaController::class, 'destroy'])->name('ventas.venta.destroy');
 
 Route::get('/organizador/calendario', [EventoController::class, 'index']);
 Route::post('/organizador/calendario/agregar', [EventoController::class, 'store']);
