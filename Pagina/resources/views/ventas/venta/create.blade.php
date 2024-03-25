@@ -141,37 +141,44 @@
 	$('#guardar').hide();
 	$("#pidarticulo").change(mostrarValores);
 
-	function mostrarValores() 
-	{
+	function mostrarValores() {
 		datosArticulo = document.getElementById('pidarticulo').value.split('_');
-		$("#pprecio_venta").val(datosArticulo[2]);
+		var precio_venta = parseFloat(datosArticulo[2]);
+		precio_venta = precio_venta.toFixed(2);
+		$("#pprecio_venta").val(precio_venta);
 		$("#pstock").val(datosArticulo[1]);
 	}
 	
-	function agregar()
-	{
-		idarticulo=$("#pidarticulo").val();
-		articulo=$("#pidarticulo option:selected").text();
-		cantidad=$("#pcantidad").val();
-		precio_compra=$("#pprecio_compra").val();
-		precio_venta=$("#pprecio_venta").val();
+	function agregar() {
+    idarticulo = $("#pidarticulo").val();
+    articulo = $("#pidarticulo option:selected").text();
+    cantidad = parseFloat($("#pcantidad").val());
+    precio_venta = parseFloat($("#pprecio_venta").val());
+    descuento = parseFloat($("#pdescuento").val()); // Obtener el descuento
 
-		if (idarticulo!="" && cantidad!="" && cantidad>0 && precio_compra!="" && precio_venta!="")
-		{
-			subtotal[cont]=(cantidad*precio_compra);
-			total=total+subtotal[cont];
+    if (idarticulo != "" && cantidad > 0 && precio_venta != "") {
+        subtotal[cont] = cantidad * precio_venta;
 
-			var fila='<tr class="selected" id="fila' +cont+ '"> <td><button type="button" class="btn btn-warning" onclick="eliminar('+cont+');"> X </button></td> <td><input type ="hidden" name="idarticulo[]" value="' +idarticulo+ '"> ' +articulo+ ' </td> <td><input type ="number" name="cantidad[]" value="' +cantidad+ '"></td> <td><input type ="number" name="precio_compra[]" value="' +precio_compra+ '"></td> <td><input type ="number" name="precio_venta[]" value="' +precio_venta+ '"></td> <td>'+subtotal[cont]+'</td> </tr>';
+        // Aplicar descuento si existe
+        if (!isNaN(descuento) && descuento > 0) {
+            subtotal[cont] -= descuento;
+        }
 
-			cont++;
-			limpiar();
-			$('#total').html("MXN. " + total);
-			evaluar();
-			$('#detalles').append(fila);
-		} else {
-			alert("Error en los datos del artículo");
-		}
-	}
+        total += subtotal[cont]; // Sumar al total con el descuento aplicado
+
+        var fila = '<tr class="selected" id="fila' + cont + '"> <td><button type="button" class="btn btn-warning" onclick="eliminar(' + cont + ');"> X </button></td> <td><input type ="hidden" name="idarticulo[]" value="' + idarticulo + '"> ' + articulo + ' </td> <td><input type ="number" name="cantidad[]" value="' + cantidad + '"></td> <td><input type ="number" name="precio_venta[]" value="' + precio_venta + '"></td> <td><input type ="number" name="descuento[]" value="' + descuento + '"></td> <td>'+subtotal[cont]+'</td> </tr>';
+
+        cont++;
+        limpiar();
+        $('#total').html("MXN. " + total.toFixed(2)); // Asegurar que el total tenga 2 decimales
+        evaluar();
+        $('#detalles').append(fila);
+    } else {
+        alert("Error en los datos del artículo");
+    }
+}
+
+
 
 
 	function limpiar() {
@@ -183,6 +190,7 @@
 	function evaluar() {
 		if(total>0){
 			$("#guardar").show();
+			$('#total_venta').val(total);
 		} else {
 			$("#guardar").hide();
 		}

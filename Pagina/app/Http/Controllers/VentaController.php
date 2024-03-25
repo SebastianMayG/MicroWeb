@@ -8,8 +8,8 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests\VentaFormRequest;
-use App\Venta;
-use App\DetalleVenta;
+use App\Models\Venta;
+use App\Models\DetalleVenta;
 use DB;
 
 use Carbon\Carbon;
