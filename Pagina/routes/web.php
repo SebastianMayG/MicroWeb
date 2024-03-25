@@ -7,6 +7,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\IngresoController;
 use App\Http\Controllers\VentaController;
+use App\Http\Controllers\EventoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -82,3 +83,9 @@ Route::post('/ventas/venta', [VentaController::class, 'store']);
 Route::get('/ventas/ingreso/{id}/edit', [VentaController::class, 'edit'])->name('ingreso.edit');
 Route::patch('/compras/ingreso/{idpersona}', [VentaController::class, 'update'])->name('compras.ingreso.update');
 Route::delete('/compras/ingreso/{id}', [VentaController::class, 'destroy'])->name('compras.ingreso.destroy');
+
+Route::get('/organizador/calendario', [EventoController::class, 'index']);
+Route::post('/organizador/calendario/agregar', [EventoController::class, 'store']);
+Route::get('/organizador/calendario/show', [EventoController::class, 'show']);
+route::post('/organizador/calendario/{id}/edit', [EventoController::class, 'edit']);
+route::delete('/organizador/calendario/{id}', [EventoController::class, 'destroy'])->name('evento.destroy');
