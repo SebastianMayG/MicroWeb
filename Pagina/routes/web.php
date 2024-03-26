@@ -37,6 +37,14 @@ Route::get('/perfil/misempresas', function () {
     return view('layouts.layouts_views.admin_myenterprise'); 
 });
 
+Route::get('/calculadora_costos/calculadora_costo', function () {
+    return view('layouts.layouts_views.admin_calculator'); 
+});
+
+Route::get('/Asesorias', function () {
+    return view('layouts.layouts_views..admin_coaching'); 
+});
+
 
 #Route::get('/home', [App\Http\Controller\HomeController::class, 'index'])->name('home');
 

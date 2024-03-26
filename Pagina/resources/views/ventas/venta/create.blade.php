@@ -84,7 +84,11 @@
 				<div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
 					<div class="form-group">
 						<label for="descuento">Descuento</label>
+<<<<<<< Updated upstream
 						<input type="number" name="pdescuento" id="pdescuento" class="form-control" placeholder="P. Descuento" value ="0">
+=======
+						<input type="number" name="pdescuento" id="pdescuento" class="form-control" placeholder="P. Descuento" value="0">
+>>>>>>> Stashed changes
 					</div>
 				</div>
 				<div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
