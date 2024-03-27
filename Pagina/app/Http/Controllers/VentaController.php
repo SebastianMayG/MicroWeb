@@ -18,7 +18,7 @@ use Illuminate\Support\Collection;
 
 class VentaController extends Controller
 {
-     public function __construct()
+    public function __construct()
     {
 
     }
@@ -26,8 +26,8 @@ class VentaController extends Controller
     {
         if ($request)
         {
-           $query=trim($request->get('searchText'));
-           $ventas=DB::table('venta as v')
+            $query=trim($request->get('searchText'));
+            $ventas=DB::table('venta as v')
             ->join('persona as p','v.idcliente','=','p.idpersona')
             ->join('detalle_venta as dv','v.idventa','=','dv.idventa')
             ->select('v.idventa','v.fecha_hora','p.nombre','v.tipo_comprobante','v.serie_comprobante','v.num_comprobante','v.impuesto','v.estado','v.total_venta')
@@ -41,9 +41,9 @@ class VentaController extends Controller
     }
     public function create()
     {
-     $personas=DB::table('persona')->where('tipo_persona','=','Cliente')->get();
-     $articulos = DB::table('articulo as art')
-      ->join('detalle_ingreso as di','art.idarticulo','=','di.idarticulo')
+        $personas=DB::table('persona')->where('tipo_persona','=','Cliente')->get();
+        $articulos = DB::table('articulo as art')
+        ->join('detalle_ingreso as di','art.idarticulo','=','di.idarticulo')
             ->select(DB::raw('CONCAT(art.codigo, " ",art.nombre) AS articulo'),'art.idarticulo','art.stock',DB::raw('avg(di.precio_venta) as precio_promedio'))
             ->where('art.estado','=','Activo')
             ->where('art.stock','>','0')
@@ -64,7 +64,7 @@ class VentaController extends Controller
          $venta->total_venta=$request->get('total_venta');
          
          $mytime = Carbon::now('America/Mexico_City');
-         $venta->fecha_hora=$mytime->toDateTimeString();
+         $venta->fecha_hora=$mytime->toDateTimeString();#toDateString(); para NO tomar en cuenta hasta los segundos
          $venta->impuesto='16';
          $venta->estado='A';
          $venta->save();

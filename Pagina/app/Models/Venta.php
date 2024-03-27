@@ -25,4 +25,9 @@ class Venta extends Model
     ];
     protected $guarded =[
     ];
+
+    public function detalleventa()
+    {
+        return $this->belongsTo(DetalleVenta::class, 'idventa');
+    }
 }

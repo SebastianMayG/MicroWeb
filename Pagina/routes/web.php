@@ -10,6 +10,7 @@ use App\Http\Controllers\VentaController;
 use App\Http\Controllers\AsesoriasController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\TipsyCursosController;
+use App\Http\Controllers\GraficasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,7 @@ Route::get('/', function () {
     return view('layouts.admin'); #welcome, asi estaba antes y es la interfaz de laravel
 });
 
-Auth::routes();
+#Auth::routes();
 
 Route::get('/principal', function () {
     return view('layouts.admin'); 
@@ -99,20 +100,15 @@ Route::get('/ventas/{id}', [VentaController::class, 'show'])->name('Venta.show')
 
 
 Route::get('/organizador/calendario', [EventoController::class, 'index']);
-Route::post('/organizador/calendario/add', [EventoController::class, 'store']);
+Route::post('/organizador/calendario/agregar', [EventoController::class, 'store']);
 Route::get('/organizador/calendario/show', [EventoController::class, 'show']);
-Route::post('/organizador/calendario/{id}/edit', [EventoController::class, 'edit']);
-Route::post('/organizador/calendario/delete/{id}', [EventoController::class, 'destroy']);
-Route::post('/organizador/calendario/update/{evento}', [EventoController::class, 'update']);
+route::post('/organizador/calendario/{id}/edit', [EventoController::class, 'edit']);
+route::delete('/organizador/calendario/{id}', [EventoController::class, 'destroy'])->name('evento.destroy');
+route::delete('/organizador/calendario/{id}', [EventoController::class, 'destroy'])->name('evento.destroy');
 
 Route::get('/Asesorias', [AsesoriasController::class, 'index']);
 
-
-
-
-
-
-
-
-
 Route::get('/Tips_Cursos/Cursos', [TipsyCursosController::class, 'index']);
+
+Route::get('/prueba',[GraficasController::class,'index']);
+Route::get('/graficas',[GraficasController::class,'index']);

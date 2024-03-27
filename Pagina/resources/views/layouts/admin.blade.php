@@ -144,7 +144,8 @@
               </a>
               <ul class="treeview-menu">
               <li><a href="/ventas/venta"><i class="fa fa-circle-o"></i> Ventas</a></li>
-                <li><a href="/ventas/cliente"><i class="fa fa-circle-o"></i> Clientes</a></li>
+              <li><a href="/ventas/cliente"><i class="fa fa-circle-o"></i> Clientes</a></li>
+              <li><a href="/graficas"><i class="fa fa-circle-o"></i> Graficas</a></li>
               </ul>
             </li>
 
@@ -283,4 +284,5 @@
     <script src="{{asset('js/app.min.js')}}"></script>
     
   </body>
+  @yield('scripts')
 </html>
