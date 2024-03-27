@@ -91,8 +91,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/perfil/miperfil"><i class="fa fa-circle-o"></i> Mi perfil</a></li>
-                <li><a href="/perfil/misempresas"><i class="fa fa-circle-o"></i> Mi(s) empresa(s)</a></li>
+                <li><a href="/MiPerfil/Perfil"><i class="fa fa-circle-o"></i> Mi perfil</a></li>
+                <li><a href="/MiPerfil/Empresa"><i class="fa fa-circle-o"></i> Mi(s) empresa(s)</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -134,7 +134,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="calculadora_costos/calculadora_costo"><i class="fa fa-circle-o"></i> Calcular costo</a></li>
+                <li><a href="/Calculadora/calculadora"><i class="fa fa-circle-o"></i> Calcular costo</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -183,27 +183,23 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Facturacion</a></li>
-                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Impuestos</a></li>
+                <li><a href="Facturacioneimpuestos/Facturas"><i class="fa fa-circle-o"></i> Facturacion</a></li>
+                <li><a href="Facturacioneimpuestos/Impuestos"><i class="fa fa-circle-o"></i> Impuestos</a></li>
               </ul>
             </li>
 
             <li class="treeview">
-              <a href="#">
+              <a href="/Oportunidades">
                 <i class="fa fa-graduation-cap"></i> <span>Oportunidades</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
             </li>
 
             <li class="treeview">
-              <a href="#">
+              <a href="/Premium/SerPremium">
                 <i class="fa fa-star"></i> <span>Clientes premium</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Beneficios</a></li>
-                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Ser premium</a></li>
-              </ul>
             </li>
 
             <li>
