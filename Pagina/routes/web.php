@@ -11,8 +11,12 @@ use App\Http\Controllers\AsesoriasController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\TipsyCursosController;
 use App\Http\Controllers\CalculadoraController;
+use App\Http\Controllers\OportunidadesController;
 use App\Http\Controllers\MiPerfilController;
 use App\Http\Controllers\MiEmpresaController;
+use App\Http\Controllers\PremiumController;
+use App\Http\Controllers\BeneficiospremiumController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -97,12 +101,9 @@ Route::post('/organizador/calendario/update/{evento}', [EventoController::class,
 Route::get('/Asesorias', [AsesoriasController::class, 'index']);
 
 
-
-
-
-
-
-
+Route::get('/Oportunidades', [OportunidadesController::class, 'index']);
+Route::get('/Premium/Beneficios', [BeneficiospremiumController::class, 'index']);
+Route::get('/Premium/SerPremium', [PremiumController::class, 'index']);
 
 Route::get('/Tips_Cursos/Cursos', [TipsyCursosController::class, 'index']);
 Route::get('/Calculadora/calculadora', [CalculadoraController::class, 'index']);

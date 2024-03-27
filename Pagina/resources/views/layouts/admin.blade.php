@@ -182,27 +182,23 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Facturacion</a></li>
-                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Impuestos</a></li>
+                <li><a href="Facturacioneimpuestos/Facturas"><i class="fa fa-circle-o"></i> Facturacion</a></li>
+                <li><a href="Facturacioneimpuestos/Impuestos"><i class="fa fa-circle-o"></i> Impuestos</a></li>
               </ul>
             </li>
 
             <li class="treeview">
-              <a href="#">
+              <a href="/Oportunidades">
                 <i class="fa fa-graduation-cap"></i> <span>Oportunidades</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
             </li>
 
             <li class="treeview">
-              <a href="#">
+              <a href="/Premium/SerPremium">
                 <i class="fa fa-star"></i> <span>Clientes premium</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Beneficios</a></li>
-                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Ser premium</a></li>
-              </ul>
             </li>
 
             <li>
