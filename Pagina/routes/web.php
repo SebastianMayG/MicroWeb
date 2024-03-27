@@ -10,6 +10,7 @@ use App\Http\Controllers\VentaController;
 use App\Http\Controllers\AsesoriasController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\TipsyCursosController;
+use App\Http\Controllers\CalculadoraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,9 +41,7 @@ Route::get('/perfil/misempresas', function () {
     return view('layouts.layouts_views.admin_myenterprise'); 
 });
 
-Route::get('/calculadora_costos/calculadora_costo', function () {
-    return view('layouts.layouts_views.admin_calculator'); 
-});
+
 
 
 
@@ -116,3 +115,4 @@ Route::get('/Asesorias', [AsesoriasController::class, 'index']);
 
 
 Route::get('/Tips_Cursos/Cursos', [TipsyCursosController::class, 'index']);
+Route::get('/Calculadora/calculadora', [CalculadoraController::class, 'index']);

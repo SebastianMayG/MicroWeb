@@ -134,7 +134,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="calculadora_costos/calculadora_costo"><i class="fa fa-circle-o"></i> Calcular costo</a></li>
+                <li><a href="/Calculadora/calculadora"><i class="fa fa-circle-o"></i> Calcular costo</a></li>
               </ul>
             </li>
             <li class="treeview">
