@@ -10,9 +10,7 @@ use App\Http\Controllers\VentaController;
 use App\Http\Controllers\AsesoriasController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\TipsyCursosController;
-<<<<<<< HEAD
 use App\Http\Controllers\GraficasController;
-=======
 use App\Http\Controllers\CalculadoraController;
 use App\Http\Controllers\OportunidadesController;
 use App\Http\Controllers\MiPerfilController;
@@ -20,7 +18,6 @@ use App\Http\Controllers\MiEmpresaController;
 use App\Http\Controllers\PremiumController;
 use App\Http\Controllers\BeneficiospremiumController;
 
->>>>>>> 725388e34c1001257deb24e6e550c2f6bc4293c9
 
 /*
 |--------------------------------------------------------------------------
@@ -106,16 +103,13 @@ Route::get('/Asesorias', [AsesoriasController::class, 'index']);
 
 Route::get('/Tips_Cursos/Cursos', [TipsyCursosController::class, 'index']);
 
-<<<<<<< HEAD
 Route::get('/prueba',[GraficasController::class,'index']);
 Route::get('/graficas',[GraficasController::class,'index']);
-=======
 Route::get('/Oportunidades', [OportunidadesController::class, 'index']);
-Route::get('/Premium/Beneficios', [BeneficiospremiumController::class, 'index']);
-Route::get('/Premium/SerPremium', [PremiumController::class, 'index']);
+Route::get('/Premium/Beneficios',[BeneficiospremiumController::class, 'index']);
+Route::get('/Premium/SerPremium',[PremiumController::class, 'index']);
 
 Route::get('/Tips_Cursos/Cursos', [TipsyCursosController::class, 'index']);
 Route::get('/Calculadora/calculadora', [CalculadoraController::class, 'index']);
 Route::get('/MiPerfil/Perfil', [MiPerfilController::class, 'index']);
 Route::get('/MiPerfil/Empresa', [MiEmpresaController::class, 'index']);
->>>>>>> 725388e34c1001257deb24e6e550c2f6bc4293c9
