@@ -9,8 +9,6 @@ use App\Http\Controllers\IngresoController;
 use App\Http\Controllers\VentaController;
 use App\Http\Controllers\AsesoriasController;
 use App\Http\Controllers\EventoController;
-use App\Http\Controllers\UsuarioController;
-
 use App\Http\Controllers\TipsyCursosController;
 use App\Http\Controllers\GraficasController;
 use App\Http\Controllers\CalculadoraController;
@@ -33,7 +31,7 @@ use App\Http\Controllers\BeneficiospremiumController;
 */
 
 Route::get('/', function () {
-    return view('auth/login'); #welcome, asi estaba antes y es la interfaz de laravel
+    return view('layouts.admin'); #welcome, asi estaba antes y es la interfaz de laravel
 });
 
 #Auth::routes();
@@ -99,3 +97,19 @@ Route::post('/organizador/calendario/agregar', [EventoController::class, 'store'
 Route::get('/organizador/calendario/show', [EventoController::class, 'show']);
 route::post('/organizador/calendario/{id}/edit', [EventoController::class, 'edit']);
 route::delete('/organizador/calendario/{id}', [EventoController::class, 'destroy'])->name('evento.destroy');
+route::delete('/organizador/calendario/{id}', [EventoController::class, 'destroy'])->name('evento.destroy');
+
+Route::get('/Asesorias', [AsesoriasController::class, 'index']);
+
+Route::get('/Tips_Cursos/Cursos', [TipsyCursosController::class, 'index']);
+
+Route::get('/prueba',[GraficasController::class,'index']);
+Route::get('/graficas',[GraficasController::class,'index']);
+Route::get('/Oportunidades', [OportunidadesController::class, 'index']);
+Route::get('/Premium/Beneficios',[BeneficiospremiumController::class, 'index']);
+Route::get('/Premium/SerPremium',[PremiumController::class, 'index']);
+
+Route::get('/Tips_Cursos/Cursos', [TipsyCursosController::class, 'index']);
+Route::get('/Calculadora/calculadora', [CalculadoraController::class, 'index']);
+Route::get('/MiPerfil/Perfil', [MiPerfilController::class, 'index']);
+Route::get('/MiPerfil/Empresa', [MiEmpresaController::class, 'index']);
