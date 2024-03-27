@@ -17,6 +17,7 @@ use App\Http\Controllers\MiPerfilController;
 use App\Http\Controllers\MiEmpresaController;
 use App\Http\Controllers\PremiumController;
 use App\Http\Controllers\BeneficiospremiumController;
+use App\Http\Controllers\MiPlanController;
 
 
 /*
@@ -113,3 +114,4 @@ Route::get('/Tips_Cursos/Cursos', [TipsyCursosController::class, 'index']);
 Route::get('/Calculadora/calculadora', [CalculadoraController::class, 'index']);
 Route::get('/MiPerfil/Perfil', [MiPerfilController::class, 'index']);
 Route::get('/MiPerfil/Empresa', [MiEmpresaController::class, 'index']);
+Route::get('/PlanNegocio', [MiPlanController::class, 'index']);

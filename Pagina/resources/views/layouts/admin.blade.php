@@ -96,14 +96,10 @@
               </ul>
             </li>
             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-file-text-o"></i>
-                <span>Plan de negocios</span>
+              <a href="/PlanNegocio">
+                <i class="fa fa-graduation-cap"></i> <span>Plan de Negocio</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="/Plan"><i class="fa fa-circle-o"></i>Mi Plan de Negocios</a></li>
-              </ul>
             </li>
             <li class="treeview">
               <a href="#">
