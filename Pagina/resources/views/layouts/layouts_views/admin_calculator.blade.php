@@ -19,6 +19,52 @@
     <link rel="apple-touch-icon" href="{{asset('img/apple-touch-icon.png')}}">
     <link rel="shortcut icon" href="{{asset('./img/Microweb.jpeg')}}">
 
+    <style>
+    .calculator {
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    .calculator table {
+      width: 100%;
+    }
+
+    .calculator input[type="number"],
+    .calculator select {
+      width: calc(100% - 40px);
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .calculator button {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .calculator button:hover {
+      background-color: #45a049;
+    }
+
+    #resultado {
+      margin-top: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+    #resultados {
+      display: block;
+      text-align: center;
+    }
+
+    </style>
+
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
@@ -102,7 +148,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/Plan"><i class="fa fa-circle-o"></i>Mi Plan de Negocios</a></li>
+                <li><a href="/compras/ingreso"><i class="fa fa-circle-o"></i> Ingresos</a></li>
+                <li><a href="/compras/proveedor"><i class="fa fa-circle-o"></i> Proveedores</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -154,13 +201,13 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/Tips_Cursos/Tips"><i class="fa fa-circle-o"></i> Tips</a></li>
-                <li><a href="/Tips_Cursos/Cursos"><i class="fa fa-circle-o"></i> Cursos</a></li>
+                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Tips</a></li>
+                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Cursos</a></li>
               </ul>
             </li>
 
             <li class="treeview">
-              <a href="/Asesorias">
+              <a href="">
                 <i class="fa fa-lightbulb-o"></i> <span>Asesorias</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -222,11 +269,6 @@
         </section>
         <!-- /.sidebar -->
       </aside>
-
-
-
-
-
       <!--Contenido-->
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
@@ -238,7 +280,7 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Sistema de Ventas</h3>
+                  <h3 class="box-title">Calculadora de costos</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     
@@ -249,9 +291,34 @@
                 <div class="box-body">
                       <div class="row">
                         <div class="col-md-12">
-                                <!--Contenido-->
-                                  @yield('contenido')
-                                <!--Fin Contenido-->
+                        <div class="calculator">
+                          <table>
+                            <tr>
+                              <td>Costo del Producto:</td>
+                              <td><input type="number" id="costo" placeholder="Ingrese el costo del producto"></td>
+                            </tr>
+                            <tr>
+                              <td>Margen de Beneficio (%):</td>
+                              <td><input type="number" id="margen" placeholder="Ingrese el margen de beneficio"></td>
+                            </tr>
+                            <tr>
+                              <td>Seleccione el Impuesto:</td>
+                              <td>
+                                <select id="impuesto">
+                                  <option value="iva">IVA (16%)</option>
+                                  <option value="isr">ISR (30%)</option>
+                                </select>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colspan="2"><button onclick="calcularPrecio()">Calcular Precio de Venta</button></td>
+                            </tr>
+                          </table>
+                          <div id="resultados">
+                            <div id="resultado"></div>
+                            <div id="resultadoSinImpuesto"></div>
+                          </div>
+                        </div>
                             </div>
                           </div>
                           
@@ -282,5 +349,34 @@
     <!-- AdminLTE App -->
     <script src="{{asset('js/app.min.js')}}"></script>
     
+    <script>
+      function calcularPrecio() {
+      var costo = parseFloat(document.getElementById('costo').value);
+      var margen = parseFloat(document.getElementById('margen').value);
+      var impuesto = document.getElementById('impuesto').value;
+
+      if (isNaN(costo) || isNaN(margen)) {
+        document.getElementById('resultado').innerHTML = "Por favor, ingrese valores válidos.";
+        return;
+      }
+
+      var impuestoPorcentaje = 0;
+      if (impuesto === 'iva') {
+        impuestoPorcentaje = 16;
+      } else if (impuesto === 'isr') {
+        impuestoPorcentaje = 30;
+      }
+
+      var precioAntesImpuesto = costo + (costo * (margen / 100));
+      var precioConImpuesto = precioAntesImpuesto + (precioAntesImpuesto * (impuestoPorcentaje / 100));
+      var precioSinImpuesto = precioAntesImpuesto;
+
+      document.getElementById('resultado').innerHTML = "Precio de Venta con " + impuesto.toUpperCase() + " (" + impuestoPorcentaje + "%): $" + precioConImpuesto.toFixed(2);
+      document.getElementById('resultadoSinImpuesto').innerHTML = "Precio de Venta sin " + impuesto.toUpperCase() + ": $" + precioSinImpuesto.toFixed(2);
+    }
+  </script>
+
+
+
   </body>
 </html>
