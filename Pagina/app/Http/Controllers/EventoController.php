@@ -58,18 +58,14 @@ class EventoController extends Controller
      */
     public function update(Request $request, Evento $evento)
     {
-        request()->validate(Evento::$rules);
-        $evento->update($request->all());
-        return response()->json($evento);
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy(Evento $evento)
     {
-        $evento = Evento::find($id)->delete();
-       return response()->json($evento);
-
+        //
     }
 }
