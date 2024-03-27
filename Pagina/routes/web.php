@@ -7,6 +7,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\IngresoController;
 use App\Http\Controllers\VentaController;
+use App\Http\Controllers\AsesoriasController;
 use App\Http\Controllers\EventoController;
 /*
 |--------------------------------------------------------------------------
@@ -41,9 +42,8 @@ Route::get('/calculadora_costos/calculadora_costo', function () {
     return view('layouts.layouts_views.admin_calculator'); 
 });
 
-Route::get('/Asesorias', function () {
-    return view('layouts.layouts_views..admin_coaching'); 
-});
+
+
 
 
 #Route::get('/home', [App\Http\Controller\HomeController::class, 'index'])->name('home');
@@ -95,11 +95,11 @@ Route::delete('/ventas/venta/{id}', [VentaController::class, 'destroy'])->name('
 
 Route::get('/ventas/{id}', [VentaController::class, 'show'])->name('Venta.show');
 
-//Route::get('ventas/{id}', 'VentaController@show')->name('Venta.show');
-
 
 Route::get('/organizador/calendario', [EventoController::class, 'index']);
 Route::post('/organizador/calendario/agregar', [EventoController::class, 'store']);
 Route::get('/organizador/calendario/show', [EventoController::class, 'show']);
 route::post('/organizador/calendario/{id}/edit', [EventoController::class, 'edit']);
 route::delete('/organizador/calendario/{id}', [EventoController::class, 'destroy'])->name('evento.destroy');
+
+Route::get('/Asesorias', [AsesoriasController::class, 'index']);
