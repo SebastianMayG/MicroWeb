@@ -9,6 +9,8 @@ use App\Http\Controllers\IngresoController;
 use App\Http\Controllers\VentaController;
 use App\Http\Controllers\AsesoriasController;
 use App\Http\Controllers\EventoController;
+use App\Http\Controllers\TipsyCursosController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -104,3 +106,13 @@ route::delete('/organizador/calendario/{id}', [EventoController::class, 'destroy
 route::delete('/organizador/calendario/{id}', [EventoController::class, 'destroy'])->name('evento.destroy');
 
 Route::get('/Asesorias', [AsesoriasController::class, 'index']);
+
+
+
+
+
+
+
+
+
+Route::get('/Tips_Cursos/Cursos', [TipsyCursosController::class, 'index']);

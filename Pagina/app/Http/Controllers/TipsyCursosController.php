@@ -8,6 +8,6 @@ class TipsyCursosController extends Controller
 {
     public function index()
     {
-        return view('Tips_y_Cursos.Cursos.index');
+        return view('TipsYCursos.Cursos.index');
     }
 }
