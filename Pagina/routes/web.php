@@ -11,6 +11,8 @@ use App\Http\Controllers\AsesoriasController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\TipsyCursosController;
 use App\Http\Controllers\CalculadoraController;
+use App\Http\Controllers\MiPerfilController;
+use App\Http\Controllers\MiEmpresaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,18 +34,6 @@ Auth::routes();
 Route::get('/principal', function () {
     return view('layouts.admin'); 
 });
-
-Route::get('/perfil/miperfil', function () {
-    return view('layouts.layouts_views.admin_myprofile'); 
-});
-
-Route::get('/perfil/misempresas', function () {
-    return view('layouts.layouts_views.admin_myenterprise'); 
-});
-
-
-
-
 
 
 
@@ -116,3 +106,5 @@ Route::get('/Asesorias', [AsesoriasController::class, 'index']);
 
 Route::get('/Tips_Cursos/Cursos', [TipsyCursosController::class, 'index']);
 Route::get('/Calculadora/calculadora', [CalculadoraController::class, 'index']);
+Route::get('/MiPerfil/Perfil', [MiPerfilController::class, 'index']);
+Route::get('/MiPerfil/Empresa', [MiEmpresaController::class, 'index']);

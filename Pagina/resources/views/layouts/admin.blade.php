@@ -91,8 +91,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/perfil/miperfil"><i class="fa fa-circle-o"></i> Mi perfil</a></li>
-                <li><a href="/perfil/misempresas"><i class="fa fa-circle-o"></i> Mi(s) empresa(s)</a></li>
+                <li><a href="/MiPerfil/Perfil"><i class="fa fa-circle-o"></i> Mi perfil</a></li>
+                <li><a href="/MiPerfil/Empresa"><i class="fa fa-circle-o"></i> Mi(s) empresa(s)</a></li>
               </ul>
             </li>
             <li class="treeview">
