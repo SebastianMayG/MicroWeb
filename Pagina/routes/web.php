@@ -88,7 +88,8 @@ Route::get('ventas/{id}', 'VentaController@show')->name('Venta.show');
 
 
 Route::get('/organizador/calendario', [EventoController::class, 'index']);
-Route::post('/organizador/calendario/agregar', [EventoController::class, 'store']);
+Route::post('/organizador/calendario/add', [EventoController::class, 'store']);
 Route::get('/organizador/calendario/show', [EventoController::class, 'show']);
-route::post('/organizador/calendario/{id}/edit', [EventoController::class, 'edit']);
-route::delete('/organizador/calendario/{id}', [EventoController::class, 'destroy'])->name('evento.destroy');
+Route::post('/organizador/calendario/{id}/edit', [EventoController::class, 'edit']);
+Route::post('/organizador/calendario/delete/{id}', [EventoController::class, 'destroy']);
+Route::post('/organizador/calendario/update/{evento}', [EventoController::class, 'update']);
