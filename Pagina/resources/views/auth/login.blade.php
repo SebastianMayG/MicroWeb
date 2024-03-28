@@ -47,7 +47,7 @@
 
                   <div class="text-center pt-1 mb-5 pb-1">
                     <button class="btn btn-blue btn-block fa-lg gradient-custom-2 mb-3" type="submit">Iniciar sesión</button>
-                    <a class="text-muted" href="#!">¿Olvidaste tu contraseña?</a>
+                    <a class="text-muted d-block mb-3" href="#!">¿Olvidaste tu contraseña?</a>
                   </div>
 
                   <div class="d-flex align-items-center justify-content-center pb-4">
