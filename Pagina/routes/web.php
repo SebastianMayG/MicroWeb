@@ -18,7 +18,7 @@ use App\Http\Controllers\MiEmpresaController;
 use App\Http\Controllers\PremiumController;
 use App\Http\Controllers\BeneficiospremiumController;
 use App\Http\Controllers\MiPlanController;
-
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +32,7 @@ use App\Http\Controllers\MiPlanController;
 */
 
 Route::get('/', function () {
-    return view('layouts.admin'); #welcome, asi estaba antes y es la interfaz de laravel
+    return view('auth/login'); #welcome, asi estaba antes y es la interfaz de laravel
 });
 
 #Auth::routes();
@@ -41,7 +41,7 @@ Route::get('/principal', function () {
     return view('layouts.admin'); 
 });
 
-
+Route::auth();
 
 #Route::get('/home', [App\Http\Controller\HomeController::class, 'index'])->name('home');
 
@@ -115,3 +115,6 @@ Route::get('/Calculadora/calculadora', [CalculadoraController::class, 'index']);
 Route::get('/MiPerfil/Perfil', [MiPerfilController::class, 'index']);
 Route::get('/MiPerfil/Empresa', [MiEmpresaController::class, 'index']);
 Route::get('/PlanNegocio', [MiPlanController::class, 'index']);
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/miempresa', [MiEmpresaController::class, 'index'])->name('miempresa');
