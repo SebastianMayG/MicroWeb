@@ -57,6 +57,7 @@
 					<div class="form-group">
 						<label>Artículo</label>
 						<select name="pidarticulo" class="form-control selectpicker" id="pidarticulo" data-live-search="true">
+							<option value="Elige articulo"</option>
 							@foreach($articulos as $articulo)
 							<option value="{{$articulo->idarticulo}}_{{$articulo->stock}}_{{$articulo->precio_promedio}}">{{$articulo->articulo}}</option>
 							@endforeach
@@ -161,7 +162,7 @@
     descuento = parseFloat($("#pdescuento").val()); // Obtener el descuento
 	stock=$("#pstock").val();
 
-    if (idarticulo != "" && cantidad > 0 && precio_venta != "" && descuento >= 0) {
+    if (idarticulo != "" && cantidad > 0 && precio_venta != "" && descuento >= 0 && cantidad <= stock) {
         subtotal[cont] = cantidad * precio_venta;
 
         // Aplicar descuento si existe
