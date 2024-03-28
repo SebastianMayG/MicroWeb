@@ -179,8 +179,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="Facturacioneimpuestos/Facturas"><i class="fa fa-circle-o"></i> Facturacion</a></li>
-                <li><a href="Facturacioneimpuestos/Impuestos"><i class="fa fa-circle-o"></i> Impuestos</a></li>
+                <li><a href="/facturaciones-impuestos/facturas"><i class="fa fa-circle-o"></i> Facturacion</a></li>
+                <li><a href="/facturaciones-impuestos/impuestos"><i class="fa fa-circle-o"></i> Impuestos</a></li>
               </ul>
             </li>
 

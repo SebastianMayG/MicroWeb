@@ -1,0 +1,8 @@
+.container form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dividimos el formulario en dos columnas de igual tamaño */
+    grid-column-gap: 20px; /* Añadimos un espacio entre las columnas */
+    
+}
+
+

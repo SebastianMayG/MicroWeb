@@ -17,6 +17,9 @@ use App\Http\Controllers\MiPerfilController;
 use App\Http\Controllers\MiEmpresaController;
 use App\Http\Controllers\PremiumController;
 use App\Http\Controllers\BeneficiospremiumController;
+use App\Http\Controllers\FacturacionController;
+use App\Http\Controllers\ImpuestosController;
+use App\Http\Controllers\FacturaController;
 use App\Http\Controllers\MiPlanController;
 
 
@@ -115,3 +118,8 @@ Route::get('/Calculadora/calculadora', [CalculadoraController::class, 'index']);
 Route::get('/MiPerfil/Perfil', [MiPerfilController::class, 'index']);
 Route::get('/MiPerfil/Empresa', [MiEmpresaController::class, 'index']);
 Route::get('/PlanNegocio', [MiPlanController::class, 'index']);
+
+Route::get('/facturaciones-impuestos/facturas',[FacturacionController::class,'index']);
+Route::get('/facturaciones-impuestos/impuestos',[ImpuestosController::class,'index']);
+
+
