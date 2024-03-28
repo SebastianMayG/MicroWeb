@@ -19,6 +19,7 @@ use App\Http\Controllers\PremiumController;
 use App\Http\Controllers\BeneficiospremiumController;
 use App\Http\Controllers\MiPlanController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
