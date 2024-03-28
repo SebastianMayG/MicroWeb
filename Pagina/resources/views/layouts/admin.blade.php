@@ -55,12 +55,16 @@
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    
-                    <p>
-                      En trabajo... Vuelva pronto
-                    </p>
+                    <p>Opciones de usuario</p>
+                    <a class="btn btn-default btn-flat" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    {{ __('Cerrar sesión') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+
                   </li>
-                  
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     
