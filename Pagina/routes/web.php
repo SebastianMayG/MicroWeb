@@ -21,7 +21,8 @@ use App\Http\Controllers\FacturacionController;
 use App\Http\Controllers\ImpuestosController;
 use App\Http\Controllers\FacturaController;
 use App\Http\Controllers\MiPlanController;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +36,7 @@ use App\Http\Controllers\MiPlanController;
 */
 
 Route::get('/', function () {
-    return view('layouts.admin'); #welcome, asi estaba antes y es la interfaz de laravel
+    return view('auth/login'); #welcome, asi estaba antes y es la interfaz de laravel
 });
 
 #Auth::routes();
@@ -44,7 +45,7 @@ Route::get('/principal', function () {
     return view('layouts.admin'); 
 });
 
-
+Route::auth();
 
 #Route::get('/home', [App\Http\Controller\HomeController::class, 'index'])->name('home');
 
@@ -122,4 +123,5 @@ Route::get('/PlanNegocio', [MiPlanController::class, 'index']);
 Route::get('/facturaciones-impuestos/facturas',[FacturacionController::class,'index']);
 Route::get('/facturaciones-impuestos/impuestos',[ImpuestosController::class,'index']);
 
-
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/miempresa', [MiEmpresaController::class, 'index'])->name('miempresa');

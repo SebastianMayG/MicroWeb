@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Title</title>
+    <title>MicroWeb | Inicio</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -47,7 +47,7 @@
 
                   <div class="text-center pt-1 mb-5 pb-1">
                     <button class="btn btn-blue btn-block fa-lg gradient-custom-2 mb-3" type="submit">Iniciar sesión</button>
-                    <a class="text-muted" href="#!">¿Olvidaste tu contraseña?</a>
+                    <a class="text-muted d-block mb-3" href="#!">¿Olvidaste tu contraseña?</a>
                   </div>
 
                   <div class="d-flex align-items-center justify-content-center pb-4">

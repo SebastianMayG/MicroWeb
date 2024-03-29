@@ -30,6 +30,7 @@ class GraficasController extends Controller    {
             'relationship_name' => 'articulo',
             'show_blank_data' => 'null',
             'filter_days'=>3
+            
         ];
     
         $chart = new LaravelChart($chart_options);
@@ -53,6 +54,7 @@ $chart_options1 = [
     'filter_start_date' => $fecha_inicio,
     'filter_end_date' => $fecha_fin,
     'group_by_period' => 'day', 
+    'chart_color' => '0, 123, 255',
 ];
     
         $chart1 = new LaravelChart($chart_options1);

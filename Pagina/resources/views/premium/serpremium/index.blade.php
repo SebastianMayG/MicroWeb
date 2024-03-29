@@ -2,14 +2,14 @@
 @section ('contenido')
 <style>
 .cardbody {
-    font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  background-color: #FFFFFF;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 60vh;
 }
 
 .card {
@@ -54,7 +54,7 @@ button:hover {
 }
 </style>
 
-<h1>Ser premium</h1>
+<h1>Usuarios premium</h1>
 <div class="cardbody">
     
     <div class="card">
