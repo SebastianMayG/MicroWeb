@@ -118,7 +118,7 @@
       <a href="#" class="compra_asesoria" onclick="mostrarModal('Arturo Elías Ayub', 'Costo de la asesoría')">Comprar Asesoría</a>
     </div>
 </div>
-<div id="asesores">
+<!--<div id="asesores">
     <div class="card">
       <img class="asesor" src="https://scontent.fmid1-4.fna.fbcdn.net/v/t1.6435-9/78362406_1413060782202739_6503602873044041728_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGiCtevpGR3i6oZy8JnlrR0XYA8AVbRWGldgDwBVtFYaQEtltTjMdigkwtGUULUBjcPah6SoRG1tCaP5hd4yYwa&_nc_ohc=TlTDpK_pLi0AX8H_BcI&_nc_ht=scontent.fmid1-4.fna&oh=00_AfBzOp8qZCbE66yEkFap10nhZDGy_Fuw_V5gHkQmi8B5hg&oe=662ADF5D" alt="Imagen del profesional" width="200">
       <h2>Sebastian Aldair May Góngora</h2>
@@ -137,9 +137,8 @@
       <p>Asesor en programacion avanzada y desarrollo personal</p>
       <a href="#" class="compra_asesoria" onclick="mostrarModal('Arturo Elías Ayub', 'Costo de la asesoría')">Comprar Asesoría</a>
     </div>
-    </div>
-      </div>
-  </div> 
+</div>-->
+
 
 <!-- Modal -->
 <div id="myModal" class="modal">
