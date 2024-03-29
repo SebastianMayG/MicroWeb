@@ -1,0 +1,19 @@
+body .blog{
+    font-size: 40px;
+    background-color: #3c8dbc;
+    color: white;
+    padding: 5px;
+    text-align: center;
+
+}
+main .article-Content{
+    font-size: 20px;
+    margin: 0;
+    padding: 10px;
+    text-align: justify;
+}
+main .article-Content .subtitulo{
+    font-size: 30px;
+    color: #3c8dbc;
+    text-align: left;
+}
