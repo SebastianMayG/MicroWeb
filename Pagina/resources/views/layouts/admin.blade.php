@@ -203,9 +203,9 @@
             </li>
 
             <li>
-              <a href="#">
+              <a href="https://github.com/SebastianMayG/MicroWeb" target="_blank">
                 <i class="fa fa-plus-square"></i> <span>Ayuda</span>
-                <small class="label pull-right bg-red">PDF</small>
+                <small class="label pull-right bg-red">README</small>
               </a>
             </li>
             <li>
