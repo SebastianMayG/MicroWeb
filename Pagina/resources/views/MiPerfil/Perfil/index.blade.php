@@ -2,14 +2,6 @@
 
 @section('contenido')
 
-
-
-
-<style>
-    #profile:hover {
-        background: gray;
-    }
-</style>
 <div class="card">
     <div class="card-header">
         <h1 class="text-center">Perfil</h1>

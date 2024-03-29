@@ -10,6 +10,7 @@ use App\Http\Controllers\VentaController;
 use App\Http\Controllers\AsesoriasController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\TipsyCursosController;
+use App\Http\Controllers\TipsController;
 use App\Http\Controllers\GraficasController;
 use App\Http\Controllers\CalculadoraController;
 use App\Http\Controllers\OportunidadesController;
@@ -125,3 +126,5 @@ Route::get('/facturaciones-impuestos/impuestos',[ImpuestosController::class,'ind
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/miempresa', [MiEmpresaController::class, 'index'])->name('miempresa');
+
+Route::get('//Tips_Cursos/Tips', [TipsController::class, 'index']);

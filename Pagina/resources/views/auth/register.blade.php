@@ -44,9 +44,9 @@
                   </div>
 
                   <div class="form-outline mb-4">
-                      <input type="text" name="telefono" id="form2Example11" class="form-control" placeholder="Número telefónico" />
-                      <label class="form-label" for="form2Example11">Número de teléfono</label>
-                  </div>
+                    <input type="text" name="telefono" id="form2Example11" class="form-control" placeholder="Número telefónico" />
+                    <label class="form-label" for="form2Example11">Numero de teléfono</label>
+                </div>
 
                   <div class="form-outline mb-4">
                       <input type="password" name="password" id="form2Example22" class="form-control" placeholder="Contraseña" />
