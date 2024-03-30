@@ -10,6 +10,7 @@ use App\Http\Controllers\VentaController;
 use App\Http\Controllers\AsesoriasController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\TipsyCursosController;
+use App\Http\Controllers\TipsController;
 use App\Http\Controllers\GraficasController;
 use App\Http\Controllers\CalculadoraController;
 use App\Http\Controllers\OportunidadesController;
@@ -38,6 +39,7 @@ use App\Http\Controllers\auth\RegisterController;
 Route::get('/', function () {
     return view('auth/login'); #welcome, asi estaba antes y es la interfaz de laravel
 });
+
 
 #Auth::routes();
 
@@ -129,3 +131,6 @@ Route::post('/miempresa/store', [MiEmpresaController::class, 'store'])->name('mi
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/miempresa', [MiEmpresaController::class, 'index'])->name('miempresa');
+
+Route::get('//Tips_Cursos/Tips', [TipsController::class, 'index']);
+
