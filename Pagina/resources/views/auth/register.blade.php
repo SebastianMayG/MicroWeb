@@ -66,8 +66,6 @@
                       <a href="{{ route('login') }}" class="btn btn-outline-danger">Iniciar sesión</a>
                   </div>
               </form>
-
-
               </div>
             </div>
           </div>

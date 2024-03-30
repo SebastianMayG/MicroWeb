@@ -40,6 +40,7 @@ Route::get('/', function () {
     return view('auth/login'); #welcome, asi estaba antes y es la interfaz de laravel
 });
 
+
 #Auth::routes();
 
 Route::get('/principal', function () {
@@ -128,3 +129,4 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/miempresa', [MiEmpresaController::class, 'index'])->name('miempresa');
 
 Route::get('//Tips_Cursos/Tips', [TipsController::class, 'index']);
+
