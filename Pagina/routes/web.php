@@ -123,5 +123,9 @@ Route::get('/PlanNegocio', [MiPlanController::class, 'index']);
 Route::get('/facturaciones-impuestos/facturas',[FacturacionController::class,'index']);
 Route::get('/facturaciones-impuestos/impuestos',[ImpuestosController::class,'index']);
 
+Route::get('/miempresa', [MiEmpresaController::class, 'index'])->name('miempresa.index');
+Route::post('/miempresa/store', [MiEmpresaController::class, 'store'])->name('miempresa.store');
+
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/miempresa', [MiEmpresaController::class, 'index'])->name('miempresa');

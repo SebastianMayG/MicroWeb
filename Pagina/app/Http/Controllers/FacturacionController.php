@@ -20,7 +20,7 @@ class FacturacionController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -28,7 +28,23 @@ class FacturacionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'rfc' => 'required|string',
+            'regimen' => 'required|string',
+            'codigo-postal' => 'required|string',
+            'nombre' => 'required|string',
+            'email' => 'required|email',
+            'uso-cfdi' =>'required|string'
+                ]);
+        Facturacion::create([
+            'rfc' => $request->rfc,
+            'regimen' => $request->regimen,
+            'codigo-postal' => $request->input('codigo-postal'),
+            'nombre' => $request->nombre,
+            'email' => $request->email,
+            'uso-cfdi' =>$request->uso_CFDI,
+
+        ]);
     }
 
     /**
