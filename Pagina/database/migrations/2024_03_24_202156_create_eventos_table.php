@@ -11,7 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        if (!Schema::hasTable('eventos')) {
             Schema::create('eventos', function (Blueprint $table) {
                 $table->id();
                 $table->string("title", 255);
@@ -20,7 +19,7 @@ return new class extends Migration
                 $table->dateTime("end");
                 $table->timestamps();
             });
-        }
+        
     }
 
     /**

@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         events: baseURL + "/organizador/calendario/show",
 
         dateClick: function (info) {
+            formulario.data.start.value = info.dateStr; 
             formulario.reset();
             formulario.start.value = info.dateStr;
             formulario.end.value = info.dateStr;
