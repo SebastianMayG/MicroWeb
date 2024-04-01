@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('contenido')
-    <script src="{{ asset('js/agenda.js') }}"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.css">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/locales-all.js"></script>
@@ -9,10 +8,10 @@
         var baseURL = {!! json_encode(url('/')) !!}
     </script>
 
-
+    <script src="{{ asset('js/agenda.js') }}"></script>
     <div class="container">
         <div id="agenda">
-
+            
         </div>
     </div>
 
@@ -48,14 +47,12 @@
                         <div class="form-group">
                             <label for="start" style="display: none;">start</label>
                             <label for="inicio">Inicio</label>
-                            <input type="date" class="form-control" name="start" id="start"
-                                aria-describedby="help text"></input>
+                            <input type="date" class="form-control" name="start" id="start" aria-describedby="help text"></input>
                         </div>
                         <div class="form-group">
                             <label for="end" style="display: none;">end</label>
                             <label for="fin">Fin</label>
-                            <input type="date" class="form-control" name="end" id="end"
-                                aria-describedby="help papu"></input>
+                            <input type="date" class="form-control" name="end" id="end" aria-describedby="help papu" ></input>
                         </div>
                     </form>
                 </div>
