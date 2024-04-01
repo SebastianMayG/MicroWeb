@@ -11,17 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('facturacions', function (Blueprint $table) {
-            $table->id();
-            $table->string('rfc_Rec');
-            $table->string('regimenFiscal_Rec');
-            $table->string('CP_Rec');
-            $table->string('usoCFDI_Rec');
-            $table->string('razonSocial_Rec');
-            $table->strinf('email_Rec');
-            $table->timestamps();
-            
-        });
     }
 
     /**
