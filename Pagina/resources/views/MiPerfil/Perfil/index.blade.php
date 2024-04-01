@@ -10,11 +10,12 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-md-12 mb-3">
                 <!-- Aquí iría la foto del usuario -->
-                <@php
+                @php
                 use App\Models\MiEmpresa;
                     $empresa = MiEmpresa::first();
                 @endphp
                 <img src="https://lh5.googleusercontent.com/proxy/9vqIPeIeHQHyGEo43DlSgD-DUtidieclv56O6UoAcYNGPXGNnZwFJL2V7oSodehCB1YT28jit7pMSVjNTnrBOnlBxW0CiRmOeH22FlPockzEbfdQPHLkDMPcgMwWdNfVHF1r2QpUk6W_aY_J87A9lFtYKMHf8_xhkMB7l_4=w1200-h630-p-k-no-nu" class="img-fluid rounded-circle" alt="Foto de perfil" style="width: 150px; height: 150px; border-radius: 50px" id="profile">
+                <button>Agregar Imagen</button>
             </div>
             <div class="col-md-12">
                 <!-- Nombre del usuario -->
