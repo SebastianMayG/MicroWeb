@@ -20,11 +20,17 @@ class Articulo extends Model
         'stock',
         'descripcion',
         'imagen',
-        'estado'
+        'estado',
+        'user_id'
     ];
 
     protected $guarded =[
 
     ];
+
+    public function user()
+    {
+        return $this -> belongsTo(User::class);   
+    }
 
 }

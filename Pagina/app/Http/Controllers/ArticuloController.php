@@ -18,18 +18,30 @@ class ArticuloController extends Controller
 
     public function index(Request $request)
     {
-        if ($request)
-        {
+        $user = auth()->user(); // Obtener el usuario autenticado
+        $query = '';
+
+        if ($request->has('searchText')) {
             $query = trim($request->get('searchText'));
             $articulos = DB::table('articulo as a')
                 ->join('categoria as c', 'a.idcategoria', '=', 'c.idcategoria')
                 ->select('a.idarticulo', 'a.nombre', 'a.codigo', 'a.stock', 'c.nombre as categoria', 'a.descripcion', 'a.imagen', 'a.estado')
                 ->where('a.nombre', 'LIKE', '%'.$query.'%')
+                ->where('a.user_id', $user->id) // Filtrar por user_id del usuario autenticado
                 ->orderBy('a.idarticulo', 'desc')
                 ->paginate(7);
-            return view('almacen.articulo.index', ["articulos" => $articulos, "searchText" => $query]);
+        } else {
+            $articulos = DB::table('articulo as a')
+                ->join('categoria as c', 'a.idcategoria', '=', 'c.idcategoria')
+                ->select('a.idarticulo', 'a.nombre', 'a.codigo', 'a.stock', 'c.nombre as categoria', 'a.descripcion', 'a.imagen', 'a.estado')
+                ->where('a.user_id', $user->id) // Filtrar por user_id del usuario autenticado
+                ->orderBy('a.idarticulo', 'desc')
+                ->paginate(7);
         }
+
+        return view('almacen.articulo.index', ["articulos" => $articulos, "searchText" => $query]);
     }
+
 
     public function create()
     {
@@ -39,6 +51,8 @@ class ArticuloController extends Controller
 
     public function store(ArticuloFormRequest $request)
     {
+        $user = auth()->user();
+
         $articulo = new Articulo;
         $articulo->idcategoria = $request->get('idcategoria');
         $articulo->codigo = $request->get('codigo');
@@ -46,6 +60,7 @@ class ArticuloController extends Controller
         $articulo->stock=$request->get('stock');
         $articulo->descripcion=$request->get('descripcion');
         $articulo->estado='Activo';
+        $articulo->user_id = $user->id;
 
         if ($request->hasFile('imagen'))
         {

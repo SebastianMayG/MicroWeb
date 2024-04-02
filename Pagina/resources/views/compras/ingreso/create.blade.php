@@ -133,7 +133,7 @@
 	var cont=0;
 	var total=0;
 	var subtotal =[];
-	$('#guardar').hide();
+	$('#guardar').show();
 
 	function agregar()
 	{
