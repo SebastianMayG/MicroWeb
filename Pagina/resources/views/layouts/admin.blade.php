@@ -151,18 +151,18 @@
 
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-graduation-cap"></i> <span>Tips/Cursos</span>
+                <i class="fa fa-graduation-cap"></i> <span>Cursos</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
+                <li><a href="/Tips_Cursos/Cursos"><i class="fa fa-circle-o"></i> Coppel Emprende</a></li>
                 <li><a href="/Tips_Cursos/Tips"><i class="fa fa-circle-o"></i> Tips</a></li>
-                <li><a href="/Tips_Cursos/Cursos"><i class="fa fa-circle-o"></i> Cursos</a></li>
               </ul>
             </li>
 
             <li class="treeview">
-              <a href="/Asesorias">
-                <i class="fa fa-lightbulb-o"></i> <span>Asesorias</span>
+              <a href="/Credito">
+                <i class="fa fa-lightbulb-o"></i> <span>Crédito</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
             </li>
@@ -194,33 +194,11 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
             </li>
-
-            <li class="treeview">
-              <a href="/Premium/SerPremium">
-                <i class="fa fa-star"></i> <span>Clientes premium</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-            </li>
-
-            <li>
-              <a href="https://github.com/SebastianMayG/MicroWeb" target="_blank">
-                <i class="fa fa-plus-square"></i> <span>Ayuda</span>
-                <small class="label pull-right bg-red">README</small>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fa fa-info-circle"></i> <span>Acerca De...</span>
-                <small class="label pull-right bg-yellow">IT</small>
-              </a>
-            </li>
-                        
+                                    
           </ul>
         </section>
         <!-- /.sidebar -->
       </aside>
-
-
 
 
 
