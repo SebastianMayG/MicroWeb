@@ -52,7 +52,7 @@
           <h2>Arturo Elías Ayub</h2>
           <p>Director de alianzas estratégicas y Contenidos de America Móvil Director de Fundacion Telmex</p>
           <p>Costo: $</p>
-          <a href="" class="Reservar" target="_blank">Comprar Curso</a>
+          <a href="#" class="Reservar">Comprar Curso</a>
         </div>
         <div class="card">
           <img class="cursos" src="https://assets-global.website-files.com/62c407b65c4f6ef40a66d8b4/6322beef299e7f3bc41c88a5_contabilidad-basica-destacada.jpg" alt="Imagen del curso" width="200">
@@ -65,9 +65,9 @@
         </div>
       </div>
       <div class="card">
-          <h2>Proximamente mas cursos</h2>
+          <h2>Coppel Emprende</h2>
           <br></br>
-          <a href="" class="Reservar" target="_blank">Proximamente</a>
-        </div>
+          <a href="https://www.enko.org/mx/encoppel/inicio" class="Reservar" target="_blank">Ir</a>
+      </div>
   </div> 
 @endsection
