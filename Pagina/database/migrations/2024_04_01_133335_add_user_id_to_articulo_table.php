@@ -9,21 +9,22 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('telefono')->nullable()->after('email');
+        Schema::table('articulo', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_id')->after('estado')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
+
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('telefono');
+        Schema::table('articulo', function (Blueprint $table) {
+            //
         });
     }
 };
-

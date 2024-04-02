@@ -7,7 +7,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\IngresoController;
 use App\Http\Controllers\VentaController;
-use App\Http\Controllers\AsesoriasController;
+use App\Http\Controllers\CreditoController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\TipsyCursosController;
 use App\Http\Controllers\TipsController;
@@ -106,7 +106,7 @@ Route::post('/organizador/calendario/{id}/edit', [EventoController::class, 'edit
 Route::post('/organizador/calendario/delete/{id}', [EventoController::class, 'destroy']);
 Route::post('/organizador/calendario/update/{evento}', [EventoController::class, 'update']);
 
-Route::get('/Asesorias', [AsesoriasController::class, 'index']);
+Route::get('/Credito', [CreditoController::class, 'index']);
 
 Route::get('/Tips_Cursos/Cursos', [TipsyCursosController::class, 'index']);
 
