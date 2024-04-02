@@ -101,16 +101,25 @@
                                 placeholder="Email...">
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Enviar</button>
-                            <button type="reset" class="btn btn-danger">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
                         </div>
                     </form>
                 </div>
             </div>
+            <!-- Formulario de la venta -->
+
+            <div class="row" style="margin: 10px">
+                <h2 style="text-align: center">Venta a facturar</h2>
+                <form action="datos">
+                	<select name="idcliente" id="idcliente" class="form-control selectpicker" data-live-search="true">
+                    </select>
+                </form>
+            </div>
+            
             <!-- Tabla de ventas -->
             <div class="container">
                 <div class="row">
-                    <h3 style="text-align: center">Tabla de la venta a Facturar</h3>
+                    <h3 style="text-align: center">Deglose de los productos</h3>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-condensed table-hover">
                             <thead style="background-color:#A9D0F5">
