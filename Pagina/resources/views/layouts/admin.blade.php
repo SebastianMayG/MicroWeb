@@ -107,17 +107,6 @@
             </li>
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-file-text-o"></i>
-                <span>Compras</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="/compras/ingreso"><i class="fa fa-circle-o"></i> Ingresos</a></li>
-                <li><a href="/compras/proveedor"><i class="fa fa-circle-o"></i> Proveedores</a></li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
                 <i class="fa fa-archive"></i>
                 <span>Almacen</span>
                 <i class="fa fa-angle-left pull-right"></i>
@@ -129,12 +118,13 @@
             </li>
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-money"></i>
-                <span>Calculadora de costo</span>
+                <i class="fa fa-file-text-o"></i>
+                <span>Compras</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/Calculadora/calculadora"><i class="fa fa-circle-o"></i> Calcular costo</a></li>
+                <li><a href="/compras/ingreso"><i class="fa fa-circle-o"></i> Ingresos</a></li>
+                <li><a href="/compras/proveedor"><i class="fa fa-circle-o"></i> Proveedores</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -148,7 +138,16 @@
               <li><a href="/graficas"><i class="fa fa-circle-o"></i> Graficas</a></li>
               </ul>
             </li>
-
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-money"></i>
+                <span>Calculadora de costo</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="/Calculadora/calculadora"><i class="fa fa-circle-o"></i> Calcular costo</a></li>
+              </ul>
+            </li>
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-graduation-cap"></i> <span>Cursos</span>
@@ -194,7 +193,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
             </li>
-                                    
+
           </ul>
         </section>
         <!-- /.sidebar -->
