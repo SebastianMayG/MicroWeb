@@ -21,22 +21,9 @@
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="container">
-                <h2 style="text-align: center">Datos de la empresa</h2>
-                <div class="row">
-                    <div class="col-md-12 mb-3" style="text-align: center">
-                        @if ($miempresa->logo)
-                            <img src="{{ asset('storage/logos/' . $miempresa->logo) }}"
-                                style="width: 150px; height: 150px; border-radius: 50px" class="img-thumbnail"
-                                alt="Logo">
-                        @else
-                            <h4><strong>Logo:</strong> No se ha cargado ningún logo.</h4>
-                        @endif
-                    </div>
 
-                    <div class="col-md-12" style="text-align: center">
-                        <h4><strong>Nombre o Razón Social:</strong> {{ $miempresa->nombre_razon_social }}</h4>
-                    </div>
-                    <h2>Datos del cliente para la factura</h2>
+                <div class="row">
+                    <h2 style="text-align: center">Datos del cliente para la factura</h2>
                     <form action="#" method="post">
                         @csrf
                         <div class="form-group">
@@ -120,5 +107,47 @@
                     </form>
                 </div>
             </div>
+            <!-- Tabla de ventas -->
+            <div class="container">
+                <div class="row">
+                    <h3 style="text-align: center">Tabla de la venta a Facturar</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-condensed table-hover">
+                            <thead style="background-color:#A9D0F5">
+                                <tr>
+                                    <th>Cantidad</th>
+                                    <th>Unidad</th>
+                                    <th>Clave SAT</th>
+                                    <th>Clave prod/Ser</th>
+                                    <th>Descripción</th>
+                                    <th>Valor Unitario</th>
+                                    <th>Descuento</th>
+                                    <th>Impuestos</th>
+                                    <th>Importe</th>
+                                    <!-- Otros encabezados de columna si es necesario -->
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                <!-- Filas de datos -->
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Total</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th>MXM</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
-    @endsection
+    </div>
+@endsection

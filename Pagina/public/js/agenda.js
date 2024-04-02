@@ -1,29 +1,35 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     let formulario = document.querySelector("form");
-    var calendarEl = document.getElementById('agenda');
+    console.log(formulario);
+    console.log(formulario.start);
+    var calendarEl = document.getElementById("agenda");
     var datos;
     var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
+        initialView: "dayGridMonth",
         locale: "Es",
         displayEventTime: false,
         headerToolbar: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'dayGridMonth,timeGridWeek,listWeek',
+            left: "prev,next today",
+            center: "title",
+            right: "dayGridMonth,timeGridWeek,listWeek",
         },
         events: baseURL + "/organizador/calendario/show",
 
         dateClick: function (info) {
             formulario.reset();
-            formulario.start.value = info.dateStr;
-            formulario.end.value = info.dateStr;
+            //formulario.start.value = info.date;
+            //formulario.end.value = info.date;
             $("#evento").modal("show");
         },
         eventClick: function (info) {
             var evento = info.event;
             console.log(evento);
-            axios.post("/organizador/calendario/" + info.event.id + "/edit", datos).then(
-                (respuesta) => {
+            axios
+                .post(
+                    "/organizador/calendario/" + info.event.id + "/edit",
+                    datos
+                )
+                .then((respuesta) => {
                     console.log(respuesta);
                     formulario.id.value = respuesta.data.id;
                     formulario.title.value = respuesta.data.title;
@@ -32,38 +38,47 @@ document.addEventListener('DOMContentLoaded', function () {
                     formulario.descripcion.value = respuesta.data.descripcion;
 
                     $("#evento").modal("show");
-                }
-            ).catch(
-                error => {
+                })
+                .catch((error) => {
                     console.log(error.response.data);
-                }
-            )
-        }
+                });
+        },
     });
 
     calendar.render();
 
-    document.getElementById("btnGuardar").addEventListener("click", function () {
-        enviarDataos("/organizador/calendario/add");
-    });
-    document.getElementById("btnEliminar").addEventListener("click", function () {
-        enviarDataos("/organizador/calendario/delete/" + formulario.id.value);
-    });
-    document.getElementById("btnModificar").addEventListener("click", function () {
-        enviarDataos("/organizador/calendario/update/" + formulario.id.value);
-    });
-    function enviarDataos(url){
+    document
+        .getElementById("btnGuardar")
+        .addEventListener("click", function () {
+            enviarDataos("/organizador/calendario/add");
+        });
+    document
+        .getElementById("btnEliminar")
+        .addEventListener("click", function () {
+            enviarDataos(
+                "/organizador/calendario/delete/" + formulario.id.value
+            );
+        });
+    document
+        .getElementById("btnModificar")
+        .addEventListener("click", function () {
+            enviarDataos(
+                "/organizador/calendario/update/" + formulario.id.value
+            );
+        });
+    function enviarDataos(url) {
         datos = new FormData(formulario);
-        const nuevaURL=baseURL+url;
-        axios.post(nuevaURL, datos).then(
-            (repuesta) => {
+        const nuevaURL = baseURL + url;
+        axios
+            .post(nuevaURL, datos)
+            .then((repuesta) => {
                 calendar.refetchEvents();
                 $("#evento").modal("hide");
-            }
-        ).catch(
-            error => { if(error.response){console.log(error.response.data)};}
-        )
-        
+            })
+            .catch((error) => {
+                if (error.response) {
+                    console.log(error.response.data);
+                }
+            });
     }
 });
-
