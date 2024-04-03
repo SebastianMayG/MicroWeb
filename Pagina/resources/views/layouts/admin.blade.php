@@ -135,7 +135,7 @@
               <ul class="treeview-menu">
               <li><a href="/ventas/venta"><i class="fa fa-circle-o"></i> Ventas</a></li>
               <li><a href="/ventas/cliente"><i class="fa fa-circle-o"></i> Clientes</a></li>
-              <li><a href="/graficas"><i class="fa fa-circle-o"></i> Graficas</a></li>
+              <li><a href="/graficas"><i class="fa fa-circle-o"></i> Reporte de ventas</a></li>
               </ul>
             </li>
             <li class="treeview">
