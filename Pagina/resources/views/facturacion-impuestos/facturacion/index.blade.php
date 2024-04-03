@@ -3,6 +3,9 @@
 @section('contenido')
     @php
         $miempresa = App\Models\MiEmpresa::first();
+        $cliente = App\Models\Persona::first();
+        $venta = App\Models\venta::all();
+        
     @endphp
     <link rel="stylesheet" href="{{ asset('css/facturacion.css') }}">
     <div class="row">
@@ -107,15 +110,32 @@
                 </div>
             </div>
             <!-- Formulario de la venta -->
-
             <div class="row" style="margin: 10px">
                 <h2 style="text-align: center">Venta a facturar</h2>
                 <form action="datos">
-                	<select name="idcliente" id="idcliente" class="form-control selectpicker" data-live-search="true">
-                    </select>
+                    <div>
+                        <div>
+                            <label for="client-factura"> Cliente</label>
+                            <input type="text" id="nombreCliente" name="nombre" required class="form-control"
+                                placeholder="Nombre del cliente...">
+                        </div>
+                        <div>
+                            <label for="Serie-comprobante">Id Factura</label>
+                            <select name="idcliente" id="idcliente" class="form-control selectpicker" data-live-search="true">
+                                <!--encontrar unicamente la Venta que se desea facturar -->
+                                @foreach ($venta as $vent)
+                                    <option value="{{ $vent->idVenta }}">{{ $vent->idVenta }}</option>
+                                @endforeach
+                            </select>
+
+                            
+                        </div>
+                      
+                    </div>
+
                 </form>
             </div>
-            
+
             <!-- Tabla de ventas -->
             <div class="container">
                 <div class="row">
@@ -136,7 +156,7 @@
                                     <!-- Otros encabezados de columna si es necesario -->
                                 </tr>
                             </thead>
-                            
+
                             <tbody>
                                 <!-- Filas de datos -->
                             </tbody>
