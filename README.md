@@ -26,7 +26,6 @@ Listo, ya puede ver la interfaz de inicio, en la parte izquieda encontrará una 
 - Asesorias
 - Organizador
 - Facturación e impuestos
-- Clientes premiun
 
 Podra hacer click en cada apartado y ver la intefaz de dicho apartado.
 El microempresario se tendra que dirigir al apartado de Plan de negocio el cual es la primera etapa para poder empezar a formalizarse.
@@ -48,7 +47,5 @@ Contamos con educacion financiera con los apartados de :
 - Facturación e impuestos
 
 Un apartado de Oportunidades, que mostraran apoyos para microempresarios.
-
-Por ultimo apartado de Clientes premium.
 
   
